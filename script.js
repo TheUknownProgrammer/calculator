@@ -23,7 +23,6 @@ function append(char) {
 }
 
 function calculate() {
-    // add a check here if the innerHTML of calculatorArea have at least one operator of those +,-,*,/.
     if (!calculated && calculationArea.innerHTML != "") {
         try {
             let result = eval(calculationArea.innerHTML);
