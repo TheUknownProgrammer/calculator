@@ -23,6 +23,7 @@ function append(char) {
 }
 
 function calculate() {
+    // add a check here if the innerHTML of calculatorArea have at least one operator of those +,-,*,/.
     if (!calculated && calculationArea.innerHTML != "") {
         try {
             let result = eval(calculationArea.innerHTML);
@@ -61,6 +62,8 @@ function addDot() {
         var newStr = calculationArea.innerHTML.replaceAll(/[*/+-]/gi, ",");
         var newArr = newStr.split(",").filter((item) => item != "");
         var lastNumber = newArr[newArr.length - 1];
+
+        console.log(newArr);
 
         if (!lastNumber.includes(".")) {
             calculationArea.innerHTML += ".";
