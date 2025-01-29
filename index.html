@@ -7,30 +7,31 @@
     <link rel="stylesheet" href="style.css" />
     <meta name="author" content="TheUnknownProgrammer">
     <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="resources/calculator-favicon.png" type="image/x-icon">
   </head>
   <body>
     <div id="calculator">
       <div id="calculation"></div>
       <div id="keys">
-        <button onclick="append('+')">+</button>
-        <button onclick="append('-')">-</button>
-        <button onclick="append('/')">/</button>
-        <button onclick="append('*')">*</button>
-        <button onclick="append('0')">0</button>
-        <button onclick="append('1')">1</button>
-        <button onclick="append('2')">2</button>
-        <button onclick="append('3')">3</button>
-        <button onclick="append('4')">4</button>
-        <button onclick="append('5')">5</button>
-        <button onclick="append('6')">6</button>
-        <button onclick="append('7')">7</button>
-        <button onclick="append('8')">8</button>
-        <button onclick="append('9')">9</button>
-        <button onclick="addDot()">.</button>
-        <button onclick="removeCharacter()">CE</button>
-        <button onclick="clearCalculation()">AC</button>
-        <button onclick="previousAnswer()">Ans</button>
-        <button onclick="calculate()">=</button>
+        <button onclick="append('+')" title="+">+</button>
+        <button onclick="append('-')" title="-">-</button>
+        <button onclick="append('/')" title="/">/</button>
+        <button onclick="append('*')" title="*">*</button>
+        <button onclick="append('0')" title="Zero">0</button>
+        <button onclick="append('1')" title="One">1</button>
+        <button onclick="append('2')" title="Two">2</button>
+        <button onclick="append('3')" title="Three">3</button>
+        <button onclick="append('4')" title="Four">4</button>
+        <button onclick="append('5')" title="Five">5</button>
+        <button onclick="append('6')" title="Six">6</button>
+        <button onclick="append('7')" title="Seven">7</button>
+        <button onclick="append('8')" title="Eight">8</button>
+        <button onclick="append('9')" title="Nine">9</button>
+        <button onclick="addDot()" title="Add Dot.">.</button>
+        <button onclick="removeCharacter()" title="Remove 1 Expression">CE</button>
+        <button onclick="clearCalculation()" title="Clear Calculation">AC</button>
+        <button onclick="previousAnswer()" title="Previous Calculation">Ans</button>
+        <button onclick="calculate()" title="Calculate.">=</button>
       </div>
     </div>
   </body>
