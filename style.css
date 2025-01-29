@@ -1,3 +1,12 @@
+body {
+    background-image: repeating-linear-gradient(45deg,  dimgray, white 10%);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
 #calculator {
     width: 300px;
     height: fit-content;
