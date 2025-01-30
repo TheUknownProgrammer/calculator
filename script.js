@@ -7,66 +7,69 @@ const getLastChar = (str) => str[str.length - 1];
 
 function append(char) {
     if (calculated) {
-        calculationArea.innerHTML = "";
+        calculationArea.textContent = "";
         calculated = false;
     }
 
     if (isNaN(char)) { // if not a number 
-        if (calculationArea.innerHTML != "") {
-            calculationArea.innerHTML += char
+        if (calculationArea.textContent != "") {
+            calculationArea.textContent += char
         }
     } else { // if a number is inserted to the calculator
-        calculationArea.innerHTML += char;
+        calculationArea.textContent += char;
     }
 
     calculationArea.scrollTo(calculationArea.scrollWidth, 0)
 }
 
 function calculate() {
-    // add a check here if the innerHTML of calculatorArea have at least one operator of those +,-,*,/.
-    if (!calculated && calculationArea.innerHTML != "") {
+    if (!calculated && calculationArea.textContent != "") {
         try {
-            let result = eval(calculationArea.innerHTML);
-            calculationArea.innerHTML = eval(result);
+            let result = eval(calculationArea.textContent);
+            calculationArea.textContent = eval(result);
             historyCalculation.push(result);
             previousAnswerVal = result;
         } catch (err) {
-            calculationArea.innerHTML = err.message;
+            calculationArea.textContent = err.message;
         }
     }
     calculated = true;
 }
 
 function clearCalculation() {
-    calculationArea.innerHTML = "";
+    calculationArea.textContent = "";
 }
 
 function removeCharacter() {
     if (!calculated) {
-        calculationArea.innerHTML = calculationArea.innerHTML.substring(0, calculationArea.innerHTML.length - 1);
+        calculationArea.textContent = calculationArea.textContent.substring(0, calculationArea.textContent.length - 1);
     }
 }
 
 function previousAnswer() {
     if (previousAnswerVal != undefined && !calculated) {
-        if (!isNaN(getLastChar(calculationArea.innerHTML))) {
-            calculationArea.innerHTML += "*" + previousAnswerVal;
+        if (!isNaN(getLastChar(calculationArea.textContent))) {
+            calculationArea.textContent += "*" + previousAnswerVal;
         } else {
-            calculationArea.innerHTML += previousAnswerVal;
+            calculationArea.textContent += previousAnswerVal;
         }
     }
 }
 
 function addDot() {
-    if (calculationArea.innerHTML != "" && !calculated) {
-        var newStr = calculationArea.innerHTML.replaceAll(/[*/+-]/gi, ",");
-        var newArr = newStr.split(",").filter((item) => item != "");
-        var lastNumber = newArr[newArr.length - 1];
+    if (!calculated) {
+        if (calculationArea.textContent != "") {
+            var newStr = calculationArea.textContent.replaceAll(/[*/+-]/gi, ",");
+            var newArr = newStr.split(",").filter((item) => item != "");
+            var lastNumber = newArr[newArr.length - 1];
 
-        console.log(newArr);
+            console.log(newArr);
 
-        if (!lastNumber.includes(".")) {
-            calculationArea.innerHTML += ".";
+            if (!lastNumber.includes(".")) {
+                calculationArea.textContent += ".";
+            }
+        } else {
+            calculationArea.textContent += ".";
         }
     }
 }
