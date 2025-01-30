@@ -20,7 +20,7 @@ body {
 #calculation {
     box-sizing: border-box;
     background-color: black;
-    color: white;
+    color: lightgreen;
     padding: 10px;
     font-size: 2.5rem;
     font-family: monospace;
@@ -33,6 +33,7 @@ body {
     overflow-y: hidden;
     /*word-break: break-all;*/
     user-select: none;
+    text-transform: capitalize;
 }
 
 #keys {
